@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lingua — онлайн-школа языков</title>
+<style>
+:root{--bg:#fbf7f0;--card:#fff;--tx:#1d2a2a;--mu:#5c6b6b;--ac:#0f6b6b;--ac2:#e0833a;--bd:#e6dfd2;--hero:#e7f1ef;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a1a;--card:#1a2424;--tx:#eaf1ef;--mu:#9db0ac;--ac:#4fc1b8;--ac2:#f0a566;--bd:#2c3a39;--hero:#17302e}}
+:root[data-theme="dark"]{--bg:#121a1a;--card:#1a2424;--tx:#eaf1ef;--mu:#9db0ac;--ac:#4fc1b8;--ac2:#f0a566;--bd:#2c3a39;--hero:#17302e}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0 0 .5em}
+.w{max-width:960px;margin:0 auto;padding:0 18px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;max-width:960px;margin:0 auto}
+.logo{font:700 1.4rem Georgia,serif;color:var(--ac)}
+nav a{color:var(--tx);text-decoration:none;margin-left:16px;font-size:.95rem}
+.hero{background:var(--hero);padding:56px 0}
+.hero h1{font-size:clamp(1.9rem,6vw,3rem);max-width:640px}
+.hero p{color:var(--mu);max-width:520px;font-size:1.05rem}
+.btn{display:inline-block;background:var(--ac2);color:#1d1305;font-weight:700;text-decoration:none;border:0;border-radius:10px;padding:12px 22px;cursor:pointer;font-size:1rem;margin-top:8px}
+.btn.alt{background:transparent;border:2px solid var(--ac);color:var(--ac)}
+section{padding:48px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.card .em{font-size:1.8rem}
+.card p{color:var(--mu);margin:.3em 0 0;font-size:.95rem}
+.num{font:700 1.6rem Georgia,serif;color:var(--ac2)}
+.demo{max-width:420px;margin:0 auto;text-align:center}
+.flash{min-height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;font-size:1.5rem}
+.flash small{color:var(--mu);font-size:.85rem;margin-top:6px}
+.row{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.row button{flex:1}
+footer{border-top:1px solid var(--bd);padding:24px 0;color:var(--mu);font-size:.9rem;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="logo">Lingua</div><nav><a href="#langs">Языки</a><a href="#how">Как учим</a><a href="#try">Попробовать</a></nav></header>
+
+<div class="hero"><div class="w">
+<h1>Учите язык в удобном темпе — без зубрёжки</h1>
+<p>Короткие занятия, живая практика и понятный план. Занимайтесь с телефона в любое время.</p>
+<a class="btn" href="#try">Попробовать урок</a> <a class="btn alt" href="#contact">Записаться</a>
+</div></div>
+
+<section id="langs"><div class="w">
+<h2>Языки</h2>
+<div class="grid">
+<div class="card"><div class="em">🇬🇧</div><h3>Английский</h3><p>От нуля до свободного общения: работа, поездки, учёба.</p></div>
+<div class="card"><div class="em">🇰🇿</div><h3>Казахский</h3><p>Разговорный язык для жизни и работы в Казахстане.</p></div>
+<div class="card"><div class="em">🇩🇪</div><h3>Немецкий</h3><p>Базовый курс для учёбы и переезда.</p></div>
+</div></div></section>
+
+<section id="how" style="background:var(--card)"><div class="w">
+<h2>Как проходит обучение</h2>
+<div class="grid">
+<div><div class="num">1</div><h3>Определяем уровень</h3><p>Короткий тест и разговор о ваших целях.</p></div>
+<div><div class="num">2</div><h3>Занимаемся регулярно</h3><p>15–30 минут в день: слова, фразы, практика.</p></div>
+<div><div class="num">3</div><h3>Говорим</h3><p>Живое общение, чтобы язык заработал на практике.</p></div>
+</div></div></section>
+
+<section id="try"><div class="w">
+<h2 style="text-align:center">Мини-урок: английские слова</h2>
+<div class="demo">
+<div class="card flash" id="fc" onclick="flip()"></div>
+<div class="row"><button class="btn alt" onclick="mark(false)">Повторить</button><button class="btn" onclick="mark(true)">Знаю</button></div>
+<p id="sc" style="color:var(--mu)"></p>
+</div></div></section>
+
+<section id="contact" style="background:var(--hero)"><div class="w" style="text-align:center">
+<h2>Готовы начать?</h2>
+<p style="color:var(--mu)">Напишите нам, и мы подберём формат занятий.</p>
+<a class="btn" href="https://t.me/your_username">Написать в Telegram</a>
+</div></section>
+
+<footer><div class="w">© Lingua — онлайн-школа языков</div></footer>
+
+<script>
+const W=[["apple","яблоко"],["to travel","путешествовать"],["tomorrow","завтра"],["friend","друг"],["How are you?","Как дела?"],["to learn","учить"]];
+let i=0,show=false,ok=0,seen=0;
+const fc=document.getElementById('fc'),sc=document.getElementById('sc');
+function draw(){
+ if(i>=W.length){fc.innerHTML='Готово! 🎉<small>Вы знаете '+ok+' из '+W.length+'</small>';sc.textContent='';return}
+ fc.innerHTML=(show?W[i][1]:W[i][0])+'<small>'+(show?'перевод':'нажмите, чтобы увидеть перевод')+'</small>';
+ sc.textContent='Слово '+(i+1)+' из '+W.length;
+}
+function flip(){if(i<W.length){show=!show;draw()}}
+function mark(k){if(i>=W.length){i=0;ok=0;show=false;draw();return}if(k)ok++;i++;show=false;draw()}
+draw();
+</script>
+</body>
+</html>
